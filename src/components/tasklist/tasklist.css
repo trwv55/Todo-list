@@ -1,54 +1,50 @@
 .task {
-    display: flex;
-    flex-direction: row;
-    margin: 25px 0 25px 25px;
-    font-size: 24px;
-    color: #25547B;
+  display: flex;
+  flex-direction: row;
+  margin: 25px 0 25px 25px;
+  font-size: 24px;
+  color: #25547b;
 }
 
 .task-done {
-    opacity: .2;
+  opacity: 0.2;
+  text-decoration: line-through;
 }
 
 .checkbox {
-    margin: 20px 20px 0 0;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    /*transition: color ease .3s;*/
-    /*color: #25547B;*/
-    /*border: 1px solid #25547B;*/
+  margin: 20px 20px 0 0;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
 }
 
-
-
 .task-button-wrapper {
-    width: 350px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .task-button-wrapper span {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .tasklist-button {
-    border-radius: 5px;
-    background-color: #4676D7;
-    color: #fff;
-    padding: 6px 13px;
-    font-size: 15px;
-    border: 0;
-    cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(147, 196, 155);
+  color: #fff;
+  padding: 6px 13px;
+  font-size: 15px;
+  border: 0;
+  cursor: pointer;
 }
 
 .tasklist-button:hover {
-    background-color:  #1d49aa;
+  background-color: #1d49aa;
 }
 
 .tasklist-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px #cbd6ee;
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
 }

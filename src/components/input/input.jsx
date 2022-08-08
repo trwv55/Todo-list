@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Button from '../button/button';
 
 const TaskInput = styled.input`
   border: none;
@@ -17,43 +16,26 @@ const TaskInput = styled.input`
   }
 `;
 
-class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputValue: '',
-    };
-  }
+const Input = (props) => {
+  const [inputValue, setInputValue] = useState('');
 
-  addTask = () => {
-    const { inputValue } = this.state;
-    if (inputValue) {
-      this.props.addTask(inputValue);
-      this.setState({ inputValue: '' });
+  const addTask = (e) => {
+    if (e.key === 'Enter' && inputValue) {
+      props.addTask(inputValue);
+      setInputValue('');
     }
   };
-
-  onChangeInput = (event) => {
-    this.setState({
-      inputValue: event.target.value,
-    });
-  };
-
-  render() {
-    const { inputValue } = this.state;
-
-    return (
-      <div className="input-wrapper">
-        <TaskInput
-          type="text"
-          placeholder="Add a task"
-          value={inputValue}
-          onChange={this.onChangeInput}
-        />
-        <Button customClass="button-input" name="" onClick={this.addTask} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className='input-wrapper'>
+      <TaskInput
+        type='text'
+        placeholder='Add a task'
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        onKeyPress={addTask}
+      />
+    </div>
+  );
+};
 
 export default Input;
